@@ -1,0 +1,17 @@
+<div class="games-container">
+  <h1 class="title">අපගේ ගණිත ක්‍රීඩා ගවේෂණය කරන්න</h1>
+
+  <div class="game-card" *ngFor="let game of games">
+    <img [src]="game.image" alt="{{ game.name }}" class="game-image">
+    <div class="game-content">
+      <h2>{{ game.name }}</h2>
+      <p>{{ game.description }}</p>
+      <div class="benefits">
+        <div class="benefit">
+          <h3>ගණිත පාඩම</h3>
+          <p>{{ game.lesson }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

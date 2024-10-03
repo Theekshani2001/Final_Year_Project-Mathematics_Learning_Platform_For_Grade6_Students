@@ -1,0 +1,79 @@
+<body>
+
+<div class="info-bar">
+  <div id="timer">00:00</div>
+  <div id="turn-count">0</div>
+</div>
+<div class="drag" id="drag">
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block1" style="--img:url('assets/images/Game1-M-1/block 1.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block2" style="--img:url('assets/images/Game1-M-1/block 2.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block3" style="--img:url('assets/images/Game1-M-1/block 3.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block4" style="--img:url('assets/images/Game1-M-1/block 4.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block5" style="--img:url('assets/images/Game1-M-1/block 5.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block6" style="--img:url('assets/images/Game1-M-1/block 6.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block7" style="--img:url('assets/images/Game1-M-1/block 7.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block8" style="--img:url('assets/images/Game1-M-1/block 8.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block9" style="--img:url('assets/images/Game1-M-1/block 9.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+</div>
+
+<div class="board">
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+</div>
+
+<button class="reset" (click)="resetPuzzle()">ප්‍රහේලිකාව නැවත සකසන්න</button>
+
+<!-- Next Game button (Initially hidden) -->
+<button class="next-game" id="next-game" (click)="goToNextGame()" >දෙවන තරගය</button>
+
+<div class="hint-box">
+  <h3>ඉඟිය</h3>
+  <img src="./assets/images/Hint/BlockCube.jpg" alt="Hint Image">
+</div>
+
+<!-- Overlay to darken background (Initially hidden) -->
+<div id="overlay" class="overlay"></div>
+<audio id="fireworks-sound">
+  <source src="./assets/sounds/fireworks.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<router-outlet></router-outlet>
+
+</body>
+
+

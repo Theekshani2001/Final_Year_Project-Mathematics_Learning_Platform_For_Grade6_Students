@@ -1,0 +1,59 @@
+/*=====Navigations======*/
+.top-header {
+  height: 85px;
+  background-color: #1F0433;
+  display: flex;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+ // border: 2px solid red;
+}
+
+.top-left-slide{
+  height: 100%;
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+.top-right-slide{
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#top-left-id{
+  padding-left: 100px;
+}
+#top-right-id{
+  padding-right: 100px;
+}
+.business-logo{
+  color: white;/*(rgb,rgba,...)*/
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+}
+.navigation-outer{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  //border: 2px solid red;
+}
+.navigation-outer li{
+  display: inline;
+  //border: 2px solid yellow;
+}
+
+.navigation-outer li a{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 20px;
+  padding: 2vw;
+  //border: 2px solid yellow;
+}
+.navigation-outer li a:hover{
+  color:#1F0433;
+  background-color:#4d1482;
+}
+
+/*=====Navigations======*/

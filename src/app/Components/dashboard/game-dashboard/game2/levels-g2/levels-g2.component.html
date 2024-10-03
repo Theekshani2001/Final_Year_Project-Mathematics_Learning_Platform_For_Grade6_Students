@@ -1,0 +1,39 @@
+<div class="body">
+  <div class="video-container">
+    <video class="background-video" #backgroundVideo class="background-video" autoplay loop muted  preload="auto">
+      <source src="./assets/videos/PeppaPigStyleVideoBackground.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>හැඩ තරගය</h1>
+      <p>ඔබට අවශ්‍ය ප්‍රමාණය තෝරන්න</p>
+      <div class="board-container">
+
+        <a routerLink="/dashboard/game-dashboard/game2/g2-content/g2-easy" class="board-link">
+          <img src="./assets/images/Boards/g2-L.png" alt="Click Me" class="board-image">
+        </a>
+
+        <a routerLink="/dashboard/game-dashboard/game2/g2-content/g2-medium" class="board-link">
+          <img src="./assets/images/Boards/g2-M.png" alt="Click Me" class="board-image">
+        </a>
+
+        <a routerLink="/dashboard/game-dashboard/game2/g2-content/g2-hard" class="board-link">
+          <img src="./assets/images/Boards/g2-H.png" alt="Click Me" class="board-image">
+        </a>
+      </div>
+    </div>
+    <a routerLink="/dashboard/game-dashboard/game2/lesson2" class="gif-link">
+      <img src="./assets/images/lesson2.png" alt="Click Me" class="gif-image">
+    </a>
+    <a routerLink="/dashboard/game-dashboard/game2/quiz2" class="quiz-link">
+      <img src="./assets/images/Quiz.gif" alt="Click Me" class="quiz-image">
+    </a>
+
+    <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+      <i id="volume-icon" class="fas fa-volume-up"></i>
+    </button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

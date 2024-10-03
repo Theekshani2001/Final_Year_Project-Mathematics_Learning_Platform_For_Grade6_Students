@@ -1,0 +1,209 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 50px 0 0 0;
+  padding: 0;
+  background: url('/assets/images/Background-Games/img_2.png') no-repeat center center fixed; /* Adjust the path to your background image */
+  background-size: cover; /* Ensure the background covers the entire display */
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stats {
+  display: flex;
+  gap: 20px; /* Add spacing between stats */
+  position: absolute;
+  top: 100px;
+  left: 3px;
+  color: #FFF;
+  font-size: 16pt; /* Increase font size for better visibility */
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.stats div {
+  margin: 0 10px; /* Add some margin for spacing */
+}
+
+.board-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.board-container.flipped .board {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.board-container.flipped .win {
+  transform: rotateY(0) rotateZ(0);
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background: #282A3A;
+  transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg) rotateZ(50deg);
+  background: #FDF8E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card.flipped .card-front {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0) rotateZ(0);
+}
+
+.win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #FDF8E6;
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.win-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 21pt;
+  color: #282A3A;
+}
+
+.highlight {
+  color: #7303c0;
+}
+
+.start-button {
+  position: absolute;
+  bottom: 300px; /* Adjust button position */
+  right: 200px; /* Move button closer to the left side */
+  background: white;
+  color: red;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 0;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.great-job {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #f00, 0 0 20px #f00;
+  animation: fade-in-out 5s ease-in-out;
+}
+
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/fireworks.gif') center center/cover no-repeat;
+  z-index: 1000;
+  animation: fade-in-out 5s ease-in-out;
+}
+
+// Overlay for background shading
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+// Next Game button
+.next-game {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
+}
+
+.next-game:hover {
+  background: linear-gradient(45deg, #f06595, #ff6b6b);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.next-game:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+
+

@@ -1,0 +1,60 @@
+<div class="quiz-container" *ngIf="!quizStarted">
+  <div class="start-screen">
+    <img src="/assets/images/Boards/Quiz-Board.png" alt="Start Quiz" class="start-button" (click)="startQuiz()" />
+  </div>
+</div>
+
+<div class="quiz-container" *ngIf="quizStarted && !showRules && !quizFinished">
+  <div class="question-box animated zoomIn">
+    <div class="question-timer">{{ timeLeft }}s</div>
+    <h2 class="question">{{ questions[currentQuestionIndex].question }}</h2>
+    <div class="answer-buttons">
+      <button
+        *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index"
+        class="answer-btn"
+        [ngClass]="{
+          'correct': getSelectedAnswerIndex() === i && answer.correct,
+          'wrong': getSelectedAnswerIndex() === i && !answer.correct,
+          'show-correct': showCorrect && answer.correct
+        }"
+        (click)="selectAnswer(i)"
+        [disabled]="getSelectedAnswerIndex() !== -1"
+      >
+        {{ answer.text }}
+        <span *ngIf="getSelectedAnswerIndex() !== -1 && i === getSelectedAnswerIndex()">
+          {{ answer.correct ? '✔️' : '❌' }}
+        </span>
+      </button>
+    </div>
+    <div class="controls animated fadeInUp">
+      <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">පෙර ප්‍රශ්නය</button>
+      <div class="question-number">ප්‍රශ්න අංක {{ currentQuestionIndex + 1 }} / {{ questions.length }}</div>
+      <button (click)="nextQuestion()" [disabled]="getSelectedAnswerIndex() === -1">පසු ප්‍රශ්නය</button>
+    </div>
+  </div>
+</div>
+
+<div class="quiz-container" *ngIf="quizStarted && showRules && !quizFinished">
+  <div class="rules-screen animated slideInLeft">
+    <h2>ප්‍රශ්නාවලියේ නීති</h2>
+    <p>1. ඔබට ප්‍රශ්න සෑම එකක් සඳහාම 1 මිනිත්තුක් පිළිතුරු සැපයීමට අවස්ථාව ඇත.</p>
+    <p>2. ඔබ පිළිතුරු තෝරා ගෙන නම්, එය වෙනස් කළ නොහැක.</p>
+    <p>3. ඔබ වර්තමාන ප්‍රශ්නෙහි පිළිතුරු ලබා දෙනතුරු, ඉදිරියට ගමන් කළ නොහැක.</p>
+    <p>4. ඔබ 1 මිනිත්තුක් තුළ පිළිතුරු ලබා නොදී නම්, නිවැරදි පිළිතුර පෙන්වනු ලැබේ, සහ ඔබ ස්වයංක්‍රීයව ඉදිරියට ගමන් කරයි.</p>
+    <div class="rules-controls">
+      <button (click)="exitQuiz()">පිටවීම</button>
+      <button (click)="continueQuiz()">ඉදිරියට යමු</button>
+    </div>
+  </div>
+</div>
+
+<div class="quiz-container" *ngIf="quizFinished">
+  <div class="finish-screen animated tada">
+    <h2>සුභ පැතුම්..😀🎉!</h2>
+    <p>ඔබ ප්‍රශ්න {{ questions.length }} යෙන් {{ correctAnswersCount }} කට නිවරදි පිළිතුරු සපයන ලදි...</p>
+    <div class="finish-controls">
+      <button (click)="replayQuiz()">නැවත ප්‍රශ්නාවලියට මුහුණ දෙමු</button>
+      <button (click)="exitQuiz()">නවත්වමු</button>
+    </div>
+  </div>
+</div>

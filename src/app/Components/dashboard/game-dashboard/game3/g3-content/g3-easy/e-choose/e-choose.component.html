@@ -1,0 +1,23 @@
+<div class="video-background">
+  <video #backgroundVideo class="background-video" autoplay loop muted  preload="auto">
+    <source src="./assets/videos/OutdoorBackground.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="overlay">
+    <button *ngIf="!buttonsVisible" (click)="startGame()" class="start-btn">තරගය පටන් ගනිමු</button>
+    <div *ngIf="buttonsVisible">
+      <button class="addition-btn" (click)="additionPage()">එකතු කිරීම</button>
+      <button class="subtraction-btn" (click)="subtractionPage()">අඩු කිරීම</button>
+      <button class="multiplication-btn" (click)="multiplicationPage()">ගුණ කිරිම</button>
+      <button class="division-btn" (click)="divisionPage()">බෙදීම</button>
+    </div>
+
+  </div>
+  <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+    <i id="volume-icon" class="fas fa-volume-up"></i>
+  </button>
+</div>
+
+<router-outlet></router-outlet>
+
+

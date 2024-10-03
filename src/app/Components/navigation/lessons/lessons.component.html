@@ -1,0 +1,12 @@
+<div class="lessons-container">
+  <h1 class="title">අපේ ගණිත පාඩම්....</h1>
+
+  <div class="lesson-card" *ngFor="let lesson of lessons">
+    <img [src]="lesson.image" alt="{{ lesson.name }}" class="lesson-image">
+    <div class="lesson-content">
+      <h2>{{ lesson.name }}</h2>
+      <p class="lesson-number">පෙළ පොතෙහි පාඩම් අංකය: {{ lesson.number }}</p>
+      <p class="lesson-summary">{{ lesson.summary }}</p>
+    </div>
+  </div>
+</div>

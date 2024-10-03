@@ -1,0 +1,37 @@
+
+<body>
+<div class="game">
+  <div class="stats">
+    <div class="moves">චලනයන් ගණන : {{ state.totalFlips }} </div>
+    <div class="timer">කාලය: {{ state.totalTime }} තත්පර</div>
+  </div>
+  <div class="board-container" [class.flipped]="isGameWon">
+    <div class="board" [attr.data-dimension]="4" [ngStyle]="{'grid-template-columns': 'repeat(4, auto)'}">
+      <div *ngFor="let card of cards; let i = index" class="card" [class.flipped]="card.flipped" [class.matched]="card.matched" (click)="flipCard(card)">
+        <div class="card-front"></div>
+        <div class="card-back">
+          <img *ngIf="card.flipped || card.matched" [src]="card.image" alt="card image" />
+        </div>
+      </div>
+    </div>
+    <div class="win" *ngIf="isGameWon">
+        <span class="win-text">
+          ඔබ දිනුම්...!<br />
+          චලනයන් <span class="highlight">{{ state.totalFlips }}</span> සමග<br />
+          තත්පර <span class="highlight">{{ state.totalTime }}</span> ඇතුලත
+        </span>
+    </div>
+  </div>
+  <button (click)="startGame()" class="start-button">යළි සකසන්න</button>
+</div>
+
+<button class="next-game" id="next-game" (click)="goToNextGame()" >ඔබ පහසු මට්ටම සාර්ථකව නිම කරන ලදි.... අපි මට්ටමක් ඉහළට යමු</button>
+
+<!-- Overlay to darken background (Initially hidden) -->
+<div id="overlay" class="overlay"></div>
+<audio id="fireworks-sound">
+  <source src="./assets/sounds/fireworks.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<router-outlet></router-outlet>
+</body>

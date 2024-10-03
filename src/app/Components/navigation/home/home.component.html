@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="inner">
+    <video class="background-video" #backgroundVideo class="background-video" autoplay loop muted poster="assets/images/introduction.png" preload="auto">
+      <source src="./assets/videos/Introduction.mp4" type="video/mp4">
+    </video>
+    <div class="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+      <img src="./assets/images/bubble.png" alt="bubble">
+    </div>
+    <button class="make-reservation-button" (click)="goToNextPage()" routerLink="">එන්න අපි ගවේශනය පටන් ගනිමු....</button>
+  </div>
+  <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+    <i id="volume-icon" class="fas fa-volume-up"></i>
+  </button>
+</div>
+<router-outlet></router-outlet>
+
+

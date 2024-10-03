@@ -1,0 +1,160 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-video {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .background-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 30px gap between the boards */
+  position: fixed; /* Use fixed positioning relative to the viewport */
+  top: 50%; /* 20% from the bottom of the viewport */
+  left: 50%; /* Center the container horizontally */
+  transform: translateX(-50%); /* Adjust to center the container */
+}
+
+.board-link {
+  display: inline-block;
+}
+
+.board-image {
+  width: 350px; /* Adjust as needed for perfect width */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border: none; /* Remove border */
+}
+
+
+
+.gif-link {
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  left: 15px; /* Adjust as needed */
+  z-index: 1000;
+  animation: float 3s ease-in-out infinite; /* Add floating animation */
+}
+
+.gif-image {
+  width: 200px; /* Increase size as needed */
+  height: auto;
+  cursor: pointer;
+  border: none; /* Remove border */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.gif-link:hover .gif-image {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the same position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up by 10px at the midpoint */
+  }
+}
+
+.quiz-link {
+  position: absolute;
+  top: 65px; /* Adjust as needed */
+  right: 50px; /* Adjust as needed */
+  z-index: 3;
+}
+
+.quiz-image {
+  width: 200px; /* Increase size as needed */
+  height: auto;
+  cursor: pointer;
+  border: none; /* Remove border */
+}
+
+.volume-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: grab;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.volume-button:focus {
+  outline: none;
+}
+

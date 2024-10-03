@@ -1,0 +1,27 @@
+<div class="main">
+  <video class="background-video" autoplay loop muted poster="./assets/images/BackgroundPosters/AuthPoster.png">
+    <source src="./assets/videos/Under%20The%20Sea%20-%20Free%20Background%20Video%20Animated.mp4" type="video/mp4">
+  </video>
+
+  <div class="inner">
+    <div class="left-side wrap">
+      <h2>ගණිත උයනට ඔබව සාදරයෙන් පිලිගන්නවා...!</h2>
+      <br>
+      <div class="image">
+        <img class="center" align="center" src="./assets/images/logo.png" alt="Simply Easy Learning" width="600" height="250">
+      </div>
+      <br>
+      <div class="button-bar">
+        <button routerLink="/auth-context/login" routerLinkActive="active">ඇතුළු වීම</button>
+        <button routerLink="/auth-context/signup" routerLinkActive="active">ලියාපදිංචි වීම</button>
+      </div>
+    </div>
+    <div class="right-side wrap">
+      <div class="navigateContext">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+

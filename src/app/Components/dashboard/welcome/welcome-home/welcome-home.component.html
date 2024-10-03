@@ -1,0 +1,16 @@
+
+
+<div class="main">
+  <div class="inner">
+    <video id="background-video" #backgroundVideo class="background-video" autoplay loop >
+      <source src="./assets/videos/Login-Welcome.mp4" type="video/mp4">
+    </video>
+    <a routerLink="/dashboard/game-dashboard/gameHome" class="board-link">
+      <img src="./assets/images/Boards/welcome%20board.png" alt="Click Me" class="board-image">
+    </a>
+</div>
+  <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+    <i id="volume-icon" class="fas fa-volume-up"></i>
+  </button>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+
+<div class="main">
+  <div class="inner">
+    <video #backgroundVideo class="background-video" autoplay loop >
+      <source src="./assets/videos/Game-1.mp4" type="video/mp4">
+    </video>
+    <button class="make-reservation-button" routerLink="/dashboard/game-dashboard/game1/levels-game1">
+      එන්න අපි තරගය පටන් ගනිමු....
+    </button>
+  </div>
+  <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+    <i id="volume-icon" class="fas fa-volume-up"></i>
+  </button>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,84 @@
+.top-header {
+  height: 85px;
+  background-color: #1F0433;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.top-left-slide {
+  height: 100%;
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+
+.top-right-slide {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 70px;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's above other elements within header */
+}
+
+.user-icon {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  width: 150px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+

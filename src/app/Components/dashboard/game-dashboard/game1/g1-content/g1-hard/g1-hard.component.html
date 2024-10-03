@@ -1,0 +1,160 @@
+<body>
+
+<div class="info-bar">
+  <div id="timer">00:00</div>
+  <div id="turn-count">0</div>
+</div>
+<div class="drag" id="drag">
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block1" style="--img:url('assets/images/Game1-H/block 1.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block2" style="--img:url('assets/images/Game1-H/block 2.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block3" style="--img:url('assets/images/Game1-H/block 3.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block4" style="--img:url('assets/images/Game1-H/block 4.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block5" style="--img:url('assets/images/Game1-H/block 5.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block6" style="--img:url('assets/images/Game1-H/block 6.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block7" style="--img:url('assets/images/Game1-H/block 7.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block8" style="--img:url('assets/images/Game1-H/block 8.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block9" style="--img:url('assets/images/Game1-H/block 9.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block10" style="--img:url('assets/images/Game1-H/block 10.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block11" style="--img:url('assets/images/Game1-H/block 11.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block12" style="--img:url('assets/images/Game1-H/block 12.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block13" style="--img:url('assets/images/Game1-H/block 13.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block14" style="--img:url('assets/images/Game1-H/block 14.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block15" style="--img:url('assets/images/Game1-H/block 15.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block16" style="--img:url('assets/images/Game1-H/block 16.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block17" style="--img:url('assets/images/Game1-H/block 17.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block18" style="--img:url('assets/images/Game1-H/block 18.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block19" style="--img:url('assets/images/Game1-H/block 19.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block20" style="--img:url('assets/images/Game1-H/block 20.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block21" style="--img:url('assets/images/Game1-H/block 21.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block22" style="--img:url('assets/images/Game1-H/block 22.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block23" style="--img:url('assets/images/Game1-H/block 23.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block24" style="--img:url('assets/images/Game1-H/block 24.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+  <div class="dragBox">
+    <div class="images" draggable="true" id="block25" style="--img:url('assets/images/Game1-H/block 25.jpg')" (dragstart)="drag($event)">
+    </div>
+  </div>
+
+</div>
+
+<div class="board">
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+  <div class="dropBox" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+</div>
+
+<button class="reset" (click)="resetPuzzle()">ප්‍රහේලිකාව නැවත සකසන්න</button>
+
+<div class="original-image">
+  <img src="assets/images/Game1-H/orginal.jpg" alt="Original Image">
+</div>
+
+<!-- Next Game button (Initially hidden) -->
+<button class="next-game" id="next-game" (click)="goToNextLevel()" >ඔබ අපහසුම මට්ටම සාර්ථකව නිම කර ඇත.... අපි අලුත් පාඩමකට යමු</button>
+
+<!-- Overlay to darken background (Initially hidden) -->
+<div id="overlay" class="overlay"></div>
+<audio id="fireworks-sound">
+  <source src="./assets/sounds/fireworks.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<router-outlet></router-outlet>
+
+</body>
+
+
+

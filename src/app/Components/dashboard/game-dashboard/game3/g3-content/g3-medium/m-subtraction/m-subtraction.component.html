@@ -1,0 +1,62 @@
+<div class="game-container">
+  <img src="./assets/images/img_2.png" alt="Background" class="background-image" />
+
+  <div class="score-bar">
+    <div>ලකුණු ප්‍රමාණය : {{ score }}</div>
+  </div>
+
+  <div class="equation-box">
+    <div class="equation-container">
+      <div class="number-box">{{ num1 }}</div>
+      <span style="color: black">-</span>
+      <div class="number-box">{{ num2 }}</div>
+      <span style="color: black">=</span>
+      <input type="text" [(ngModel)]="userAnswer" class="answer-box" />
+    </div>
+
+    <div class="answers-container">
+      <button *ngFor="let option of options" (click)="checkAnswer(option)">
+        {{ option }}
+      </button>
+    </div>
+  </div>
+
+  <div class="feedback" [ngClass]="{'correct': isCorrect, 'wrong': isWrong}">
+    {{ feedbackMessage }}
+  </div>
+
+  <div class="status-bar">
+    <div class="timer">කාලය: {{ elapsedTime }} sec</div>
+    <div class="time-limit"> ඉතිරි කාලය : {{ timeLimit-elapsedTime }} sec</div>
+  </div>
+  <div class="win-overlay" *ngIf="gameOver">
+    <div class="overlay-dark"></div>
+    <div class="win">
+      <span class="win-text">
+        ඔබ දිනුම් 😀 ...!<br />
+        ඔබගේ ලකුණු ප්‍රමාණය :  <span class="highlight">{{ score }}</span><br />
+        ඔබගේ කාලය : තත්පර  <span class="highlight">{{ elapsedTime }}</span>
+      </span>
+    </div>
+  </div>
+  <button class="next-game" id="next-game" (click)="goToNextGame()" >ඔබ මධ්‍යම මට්ටමේ අඩු කිරීමේ තරගය සාර්ථකව නිම කරන ලදි.... අපි තවත් තරගයකට යමු</button>
+  <div id="overlayWin" class="overlayWin"></div>
+  <audio id="fireworks-sound">
+    <source src="./assets/sounds/fireworks.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+</div>
+<div id="overlay" class="overlay">
+  <div class="overlay-text">ඔබ පාරදයි.. 🙁!<br />තරගය නැවත තව සුලු මොහොතකින් නැවත ආරම්භ වේ...</div>
+</div>
+
+
+<div id="game-over-buttons" class="game-over-buttons">
+  <button (click)="tryAgain()" class="game-over-button">නැවත උත්සහ කරමු</button>
+  <button (click)="goHome()" class="game-over-button">ප්‍රධාන මෙනුවට</button>
+</div>
+
+
+<router-outlet></router-outlet>

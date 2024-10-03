@@ -1,0 +1,151 @@
+
+.quiz-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/images/QuizBackground.gif');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button {
+  width: 350px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+}
+
+
+.rules-screen,
+.finish-screen {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rules-controls button,
+.finish-controls button {
+  background-color: #f39c12; // Warm orange
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.rules-controls button:hover,
+.finish-controls button:hover {
+  background-color: #e67e22; // Slightly darker orange on hover
+  transform: scale(1.05);
+}
+
+.rules-controls,
+.finish-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+// Question box
+.question-box {
+  position: relative;
+  width: 700px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #2980b9; // Calming blue
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-btn {
+  background-color: #ecf0f1; // Light grey
+  border: 2px solid #bdc3c7; // Slightly darker grey border
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.answer-btn.correct {
+  background-color: #2ecc71; // Green for correct answer
+}
+
+.answer-btn.wrong {
+  background-color: #e74c3c; // Red for wrong answer
+}
+
+.answer-btn.show-correct {
+  background-color: #2ecc71; // Same green for showing correct answer
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.controls button {
+  background-color: #3498db; // Bright blue
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #2980b9; // Darker blue on hover
+}
+
+.controls .question-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50; // Dark grey for question number
+}
+
+// Question timer
+.question-timer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.1rem;
+  background-color: #e74c3c; // Red background for urgency
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

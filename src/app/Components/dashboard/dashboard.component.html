@@ -1,0 +1,17 @@
+<header class="top-header">
+  <div class="top-left-slide" id="top-left-id">
+  </div>
+  <div class="top-right-slide" id="top-right-id">
+    <div class="user-menu">
+      <img src="assets/images/user-icon.png" alt="User Icon" class="user-icon" (click)="toggleDropdown()">
+      <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+        <ul>
+          <li (click)="viewProfile()">View Profile</li>
+          <li (click)="logout()">Log Out</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

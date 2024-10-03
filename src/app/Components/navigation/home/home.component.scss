@@ -1,0 +1,166 @@
+
+
+
+///*=====Slider======*/
+.main{
+  display: flex;
+  position: relative;
+  width:100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure nothing overflows */
+  //border: 2px solid yellow;
+  /*overflow: hidden;  --> Uncomment if you want to hide overflow content
+  border: 2px solid yellow;
+  /*background-repeat: no-repeat;
+  background-size:cover; */
+
+}
+
+.inner{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;  /* Remove any bottom padding */
+  //border: 2px solid red;
+  line-height: 0; /* Experiment with this value */
+  box-sizing: border-box;
+}
+
+.background-video{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  object-fit: cover;  /* Fill the container, maintaining aspect ratio */
+  overflow: hidden;
+  //border: 2px solid black;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .background-video {
+    width: auto;
+    height:100%;
+  }
+}
+
+
+.make-reservation-button{
+  width: 250px;
+  height: 60px;
+  border-radius: 50px;
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  background: #5B99C2;
+  border: 2px solid white;
+  left: -480px;
+  top: 450px;
+  transition: linear 0.2s;
+  animation-name: make-reservation-button-move;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+}
+.make-reservation-button:hover{
+  background-color: #2980b9;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes make-reservation-button-move {
+  0%{
+    left: -480px;
+  }
+  100%{
+    left:820px;
+  }
+}
+
+.bubble img{
+  width: 30px;
+  animation: bubble 7s linear infinite;
+}
+.bubble{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+@keyframes bubble {
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+
+}
+.bubble img:nth-child(1){
+  //bottom: 5px;
+  animation-delay: 2s;
+}
+.bubble img:nth-child(2){
+  //bottom: 15px;
+  animation-delay: 3s;
+}
+.bubble img:nth-child(3){
+  //bottom: 6px;
+  animation-delay: 1s;
+}
+.bubble img:nth-child(4){
+ // bottom: 20px;
+  animation-delay: 3.5s;
+}
+.bubble img:nth-child(5){
+  //bottom: 8px;
+  animation-delay: 5s;
+}
+.bubble img:nth-child(6){
+  //bottom: 35px;
+  animation-delay: 6s;
+}
+.bubble img:nth-child(7){
+  //bottom: 25px;
+  animation-delay: 7s;
+}
+
+.volume-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: grab;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.volume-button:focus {
+  outline: none;
+}
+
+

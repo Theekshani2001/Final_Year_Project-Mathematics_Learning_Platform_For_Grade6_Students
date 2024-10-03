@@ -1,0 +1,211 @@
+$primary-color: #FF6F61;
+$secondary-color: #4CAF50;
+$accent-color: #FFD700;
+$text-color: #FFF;
+
+.contact-wrapper {
+  background: url('/assets/images/ContactBackground.gif') no-repeat center center fixed;
+  background-size: cover;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $text-color;
+  animation: fadeInBackground 2s ease-in-out;
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+   // border: 1px solid red;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: bounceIn 1s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .profile-info {
+      text-align: left;
+
+      .name {
+        font-size: 2.5em;
+        color: #3C3D37;
+        margin-bottom: 10px;
+        animation: fadeInLeft 1s ease;
+      }
+
+      .title,
+      .university,
+      .location,
+      .project-info {
+        font-size: 1.2em;
+        color: $text-color;
+        margin: 5px 0;
+        animation: fadeInRight 1s ease;
+      }
+    }
+  }
+
+
+  .contact-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1s ease;
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #3C3D37;
+      animation: textGlow 2s infinite alternate;
+    }
+
+    .contact-form {
+      .form-group {
+        margin-bottom: 20px;
+        animation: fadeInUp 0.8s ease;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 15px;
+          border: 2px solid $secondary-color;
+          border-radius: 10px;
+          font-size: 1.1em;
+          background: rgba(255, 255, 255, 0.8);
+          color: #333;
+          outline: none;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            border-color: $primary-color;
+          }
+        }
+      }
+
+      .submit-btn {
+        background-color: $primary-color;
+        color: $text-color;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease;
+        animation: buttonPulse 1s infinite;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

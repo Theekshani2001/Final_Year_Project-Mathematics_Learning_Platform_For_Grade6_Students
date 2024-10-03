@@ -1,0 +1,17 @@
+<div class="video-container">
+  <video id="lesson-video" #lessonVideo controls>
+    <source src="./assets/videos/Lessons/Lesson3.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+<div class="controls">
+    <button (click)="togglePlayPause()">
+      <i [class]="isPlaying ? 'fas fa-pause' : 'fas fa-play'"></i>
+    </button>
+    <button (click)="toggleMute()">
+      <i [class]="isMuted ? 'fas fa-volume-mute' : 'fas fa-volume-up'"></i>
+    </button>
+    <button (click)="toggleFullscreen()">
+      <i class="fas fa-expand"></i>
+    </button>
+  </div>
+</div>

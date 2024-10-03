@@ -1,0 +1,114 @@
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure nothing overflows */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers the container */
+  z-index: 1; /* Video is behind */
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .background-video {
+    width: auto;
+    height:100%;
+  }
+}
+
+
+.inner {
+  position: relative;
+  z-index: 2; /* Inner content is above the video */
+  display: flex;
+  width: 80%;
+  height: 450px;
+  background: rgba(4, 94, 97, 0.8); /* Slightly transparent purple */
+  background: linear-gradient(to right, rgba(4, 83, 97, 0.8), rgba(7, 105, 170, 0.8)); /* Slightly transparent gradient */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+}
+
+.wrap {
+  width: 50%;
+  height: 100%;
+}
+
+.left-side {
+  text-align: center;
+  color: white;
+}
+
+.left-side h2 {
+  color: white;
+}
+
+.right-side{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigateContext{
+  width: 80%;
+  height: 120%;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  position: absolute;
+  background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.button-bar button {
+  width: 100px;
+  height: 35px;
+  background: linear-gradient(to right, #2F0743, #41295a);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button-bar button:hover {
+  background: linear-gradient(to right, #734b6d, #42275a);
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.active {
+  background: linear-gradient(to right, #a044ff, #6a3093);
+}
+

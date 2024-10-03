@@ -1,0 +1,45 @@
+<body>
+<div class="game">
+  <div class="stats">
+    <div class="moves">චලනයන් ගණන: {{ state.totalFlips }}</div>
+    <div class="timer">කාලය: {{ state.totalTime }} sec</div>
+    <div class="move-limit">ඉතිරි චලනයන් ප්‍රමාණය: {{ state.moveLimit - state.totalFlips }}</div>
+    <div class="time-limit">ඉතුරුව ඇති කාලය: {{ state.timeLimit - state.totalTime }} sec</div>
+  </div>
+  <div class="board-container" [class.flipped]="isGameWon">
+    <div class="board" [attr.data-dimension]="6" [ngStyle]="{'grid-template-columns': 'repeat(6, auto)'}">
+      <div *ngFor="let card of cards; let i = index" class="card" [class.flipped]="card.flipped" [class.matched]="card.matched" (click)="flipCard(card)">
+        <div class="card-front"></div>
+        <div class="card-back">
+          <img *ngIf="card.flipped || card.matched" [src]="card.image" alt="card image" />
+        </div>
+      </div>
+    </div>
+    <div class="win" *ngIf="isGameWon">
+      <span class="win-text">
+          ඔබ දිනුම් 😀 ...!<br />
+          චලනයන් <span class="highlight">{{ state.totalFlips }}</span> සමග<br />
+          තත්පර <span class="highlight">{{ state.totalTime }}</span> ඇතුලත
+        </span>
+    </div>
+  </div>
+  <button (click)="startGame()" class="start-button">නැවත සකසන්න</button>
+</div>
+
+<div id="overlay" class="overlay">
+  <div class="overlay-text">ඔබ පාරදයි.. 🙁!<br />තරගය නැවත තව සුලු මොහොතකින් නැවත ආරම්භ වේ...</div>
+</div>
+<div id="overlayWin" class="overlayWin"></div>
+
+<div id="game-over-buttons" class="game-over-buttons">
+  <button (click)="tryAgain()" class="game-over-button">නැවත උත්සහ කරමු</button>
+  <button (click)="goHome()" class="game-over-button">ප්‍රධාන මෙනුවට</button>
+</div>
+
+<button class="next-game" id="next-game" (click)="goToNextGame()">ඔබ අපහසුම මට්ටම සාර්ථකව නිම කර ඇත.... අපි අලුත් පාඩමකට යමු</button>
+<audio id="fireworks-sound">
+  <source src="./assets/sounds/fireworks.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<router-outlet></router-outlet>
+</body>

@@ -1,0 +1,34 @@
+<div class="body">
+  <div class="video-container">
+    <video autoplay loop id="background-video" preload="auto">
+      <source src="./assets/videos/UnderSea.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
+    <div class="jellyfish-container">
+      <a routerLink="/dashboard/welcome/welcomeGame1" class="jellyfish">
+        <img src="assets/images/jellyfish1.gif" alt="Game 1">
+      </a>
+      <a routerLink="/dashboard/welcome/welcomeGame2" class="jellyfish">
+        <img src="assets/images/jellyfish2.gif" alt="Game 2">
+      </a>
+      <a routerLink="/dashboard/welcome/welcomeGame3" class="jellyfish">
+        <img src="assets/images/jellyfish4.gif" alt="Game 3">
+      </a>
+    </div>
+    <!-- Volume Control Button -->
+    <button id="volume-control" class="volume-button" (click)="toggleVolume()">
+      <i id="volume-icon" class="fas fa-volume-up"></i>
+    </button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+

@@ -1,0 +1,182 @@
+//$primary-color: #42A5F5;
+//$secondary-color: #FF7043;
+//$background-color: #f0f0f0;
+//$text-color: #444;
+//
+//.lessons-container {
+//  padding: 20px;
+//  background-color: $background-color;
+//  text-align: center;
+//
+//  .title {
+//    font-size: 2.5em;
+//    color: $primary-color;
+//    margin-bottom: 30px;
+//    animation: fadeInDown 1s;
+//  }
+//
+//  .lesson-card {
+//    background: white;
+//    border-radius: 10px;
+//    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//    margin-bottom: 30px;
+//    padding: 20px;
+//    display: flex;
+//    align-items: center;
+//    transition: transform 0.3s, box-shadow 0.3s;
+//    animation: fadeInUp 1s;
+//
+//    &:hover {
+//      transform: translateY(-10px);
+//      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+//    }
+//
+//    .lesson-image {
+//      width: 120px;
+//      height: 120px;
+//      border-radius: 10px;
+//      margin-right: 20px;
+//      transition: transform 0.3s;
+//
+//      &:hover {
+//        transform: rotate(360deg);
+//      }
+//    }
+//
+//    .lesson-content {
+//      flex: 1;
+//      text-align: left;
+//
+//      h2 {
+//        font-size: 1.8em;
+//        color: $secondary-color;
+//        margin-bottom: 10px;
+//      }
+//
+//      .lesson-number {
+//        font-size: 1.2em;
+//        color: $text-color;
+//        margin-bottom: 10px;
+//      }
+//
+//      .lesson-summary {
+//        font-size: 1em;
+//        color: $text-color;
+//      }
+//    }
+//  }
+//}
+//
+//@keyframes fadeInDown {
+//  from {
+//    opacity: 0;
+//    transform: translateY(-50px);
+//  }
+//  to {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//}
+//
+//@keyframes fadeInUp {
+//  from {
+//    opacity: 0;
+//    transform: translateY(50px);
+//  }
+//  to {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//}
+
+$primary-color: #42A5F5;
+$secondary-color: #FF7043;
+$background-color: #f0f0f0;
+$text-color: #444;
+
+.lessons-container {
+  padding: 20px;
+  background: url('/assets/images/LessonBackground.gif') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+
+  .title {
+    font-size: 2.5em;
+    color: $primary-color;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s;
+  }
+
+  .lesson-card {
+    background: rgba(255, 255, 255, 0.8); // Slightly transparent background
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .lesson-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      margin-right: 20px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+
+    .lesson-content {
+      flex: 1;
+      text-align: left;
+
+      h2 {
+        font-size: 1.8em;
+        color: $secondary-color;
+        margin-bottom: 10px;
+      }
+
+      .lesson-number {
+        font-size: 1.2em;
+        color: $text-color;
+        margin-bottom: 10px;
+      }
+
+      .lesson-summary {
+        font-size: 1em;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
